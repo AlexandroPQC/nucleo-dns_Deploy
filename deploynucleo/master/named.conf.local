@@ -1,0 +1,23 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+// Zona Directa
+zone "nucleognulinux.com" {
+	type master;
+	file "/etc/bind/db.nucleognulinux.com";
+	also-notify {192.168.1.125;};
+	Allow-transfer {192.168.1.125;};
+};
+
+// Zona Inversa
+zone "1.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.192.168.1";
+	also-notify {192.168.1.125;};
+	Allow-transfer {192.168.1.125;};
+};

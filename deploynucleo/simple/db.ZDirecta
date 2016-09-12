@@ -1,0 +1,15 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	umsa.edu.bo. root.umsa.edu.bo. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	Lab273
+Lab273	IN	A	192.168.1.124
+www		CNAME	Lab273
+umsa.edu.bo.	A	192.168.1.124

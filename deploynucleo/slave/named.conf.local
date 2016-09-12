@@ -1,0 +1,22 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//Zona de busqueda directa
+	zone "nucleognulinux.com" {
+		type slave;
+		file "var/cache/bind/db.nucleognulinux.com";
+		masters {192.168.1.124;};
+	};
+
+
+//Zona de busqueda inversa
+	zone "1.168.192.in-addr.arpa" {
+		type slave;
+		file "/var/cache/bind/db.192.168.1";
+		masters {192.168.1.124;};
+	};

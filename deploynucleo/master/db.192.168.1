@@ -1,0 +1,17 @@
+;
+; BIND data file for local loopback interface
+;
+$ORIGIN 1.168.192.in-addr.arpa.
+$TTL	604800
+@	IN	SOA	dns1.nucleognulinux.com. root.nucleognulinux.com. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+		IN	NS	dns1.nucleognulinux.com.
+		IN	NS	dns2.nucleognulinux.com.
+124		IN	PTR	dns1.nucleognulinux.com.
+125		IN	PTR	dns2.nucleognulinux.com.
+153			PTR	server.nucleognulinux.com.
